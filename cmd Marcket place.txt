@@ -1,0 +1,18 @@
+1//1 Admin  2 Moderator  3 User
+
+php artisan make:seeder  AdminSeeder
+php artisan make:seeder  ModeratorSeeder
+php artisan make:seeder  UserSeeder
+
+
+php artisan migrate:fresh
+php artisan db:seed
+
+
+php artisan make:controller AdminController
+php artisan make:controller ModeratorController
+
+
+
+php artisan make:middleware Admin
+php artisan make:middleware Moderator

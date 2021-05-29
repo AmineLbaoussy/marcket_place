@@ -19,4 +19,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/accueil', 'HomeController@index')->name('accueil');
+
+/*Route::get('/office', 'HomeController@index')->name('accueil');
+
+Route::get('/adjointe', 'HomeController@index')->name('accueil');
+*/
+
+        Route::group(['prefix'=>'office','namespace'=>'admin'],function () {
+             Route::get('/','AdminController@index')->name('office');
+        });
+
+        Route::group(['prefix'=>'adjointe','namespace'=>'admin'],function () {
+             Route::get('/','ModeratorController@index')->name('adjointe');
+        });
